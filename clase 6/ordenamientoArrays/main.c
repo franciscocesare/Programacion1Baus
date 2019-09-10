@@ -6,19 +6,23 @@
 void ordenarVectorBurbujeo (int vec[], int tam);
 void ordenarVectorPorCriterio (int vec[], int tam, int criterio);
 void mostrarVectorInt(int vec [], int tam);
+int cargarVectorInt(int vec[], int tam);}
+int cargarVectorChar(vec[], int tam);
 
 int main()
 {
-    int numeros [10] = {1,8,2,6,3,4,5,7,9,0};
+    int numeros [10];
 
-    printf("muestro el vector: ");
+    cargarVectorInt(numeros, TAM); ///funcion para ir cargando el array
+
+    printf("\n muestro el vector: ");
     mostrarVectorInt(numeros, TAM);
 
-    printf("muestro el vector ordenado: ");
+    printf("\n muestro el vector ordenado: ");
     ordenarVectorBurbujeo(numeros, TAM);
     mostrarVectorInt(numeros, TAM);
 
-    printf("muestro el vector ordenado por criterio: ");
+    printf("\n muestro el vector ordenado por criterio: ");
     ordenarVectorPorCriterio(numeros, TAM, 0);///aca modificas el dato de criterio
     mostrarVectorInt(numeros, TAM);
 
@@ -75,3 +79,13 @@ void ordenarVectorPorCriterio (int vec[], int tam, int criterio)
         }
     }
 }
+int cargarVectorInt(int vec[], int tam)
+{
+   for (int i=0; i<TAM; i++)
+    {
+        printf("Ingrese un numero: ");
+        scanf("%d", &vec[i]);
+    }
+    return 0;
+}
+
