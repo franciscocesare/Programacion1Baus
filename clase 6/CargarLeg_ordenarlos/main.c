@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 #define TAM 5
 
 void mostrarAlumnos(int[], int[], char[], int[], int[], float[], int tam);
 void mostrarAlumno(int legajo, int edad, char sexo, int nota1, int nota2, float promedio);
+void ordenarAlumnosLegajos (int vec[], int tam);
 
 
 int main()
@@ -37,6 +37,10 @@ int main()
     }*/
 
     mostrarAlumnos(legajos, edades, sexos, notasP1, notasP2, promedios, TAM );
+    ordenarAlumnosLegajos(legajos,TAM);
+    mostrarAlumnos(legajos, edades, sexos, notasP1, notasP2, promedios, TAM);
+
+
 
     return 0;
 }
@@ -56,5 +60,25 @@ void mostrarAlumno(int legajo, int edad, char sexo, int nota1, int nota2, float 
 
     printf("  %d     %d   %c   %d    %d     %.2f\n",
             legajo, edad, sexo, nota1, nota2, promedio);
+}
+
+void ordenarAlumnosLegajos(int vec[],int tam)
+{
+    int aux;
+    for (int i=0; i < tam -1; i++)
+    {
+        for (int j=i+1; j<tam; j++)
+        {
+
+            if (vec[i] > vec [j])
+            {
+                aux=vec[i];
+                vec[i]=vec[j];
+                vec[j] = aux;
+
+            }
+        }
+    }
+
 }
 

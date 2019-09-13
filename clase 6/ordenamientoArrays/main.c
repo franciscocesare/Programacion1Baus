@@ -6,8 +6,8 @@
 void ordenarVectorBurbujeo (int vec[], int tam);
 void ordenarVectorPorCriterio (int vec[], int tam, int criterio);
 void mostrarVectorInt(int vec [], int tam);
-int cargarVectorInt(int vec[], int tam);}
-int cargarVectorChar(vec[], int tam);
+int cargarVectorInt(int vec[], int tam);
+//int cargarVectorChar(vec[], int tam);
 
 int main()
 {
