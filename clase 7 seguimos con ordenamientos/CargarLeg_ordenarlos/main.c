@@ -4,12 +4,12 @@
 
 void mostrarAlumnos(int[], int[], char[], int[], int[], float[], int tam);
 void mostrarAlumno(int legajo, int edad, char sexo, int nota1, int nota2, float promedio);
-void ordenarAlumnosLegajos (int vec[], int tam);
+void ordenarAlumnosLegajos (int legajo [], int edad [], char sexo [], int nota1 [], int nota2 [], float promedio [], int tam);
 
 
 int main()
 {
-    int legajos[TAM] = { 1234, 3322, 4556, 1122, 4532};
+    int legajos[TAM] = { 1234, 3322, 9556, 1122, 4532};
     int edades[TAM] = {22, 34, 21, 45, 20};
     char sexos[TAM] = {'f', 'f', 'm', 'f', 'm'};
     int notasP1[TAM] = { 2, 5, 6, 9, 10};
@@ -37,10 +37,8 @@ int main()
     }*/
 
     mostrarAlumnos(legajos, edades, sexos, notasP1, notasP2, promedios, TAM );
-    ordenarAlumnosLegajos(legajos,TAM);
+    ordenarAlumnosLegajos(legajos, edades,sexos, notasP1, notasP2, promedios,TAM);
     mostrarAlumnos(legajos, edades, sexos, notasP1, notasP2, promedios, TAM);
-
-
 
     return 0;
 }
@@ -62,19 +60,42 @@ void mostrarAlumno(int legajo, int edad, char sexo, int nota1, int nota2, float 
             legajo, edad, sexo, nota1, nota2, promedio);
 }
 
-void ordenarAlumnosLegajos(int vec[],int tam)
+void ordenarAlumnosLegajos(int legajo [], int edad [], char sexo [], int nota1 [], int nota2 [], float promedio [], int tam)
 {
     int aux;
+    char auxChar;
+    float auxFloat;   ///funcion para ordenar por legajo
+
     for (int i=0; i < tam -1; i++)
     {
         for (int j=i+1; j<tam; j++)
         {
 
-            if (vec[i] > vec [j])
+            if (legajo[i] > legajo[j])
             {
-                aux=vec[i];
-                vec[i]=vec[j];
-                vec[j] = aux;
+                aux=legajo[i];
+                legajo[i]=legajo[j];
+                legajo[j] = aux;
+
+                aux=edad[i];
+                edad[i]=edad[j];
+                edad[j] = aux;
+
+                auxChar=sexo[i];
+                sexo[i]=sexo[j];
+                sexo[j] = auxChar;
+
+                aux=nota1[i];
+                nota1[i]=nota1[j];
+                nota1[j] = aux;
+
+                aux=nota2[i];
+                nota2[i]=nota2[j];
+                nota2[j] = aux;
+
+                auxFloat=promedio[i];
+                promedio[i]=promedio[j];
+                promedio[j] = auxFloat;
 
             }
         }
