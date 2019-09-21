@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1569026822 source:c:\users\alumno\desktop\programacion1baus\clase 9 abm\clase9_abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
