@@ -224,7 +224,7 @@ int altaAlumno(eAlumno vec[], int tam){
 
     printf("*****Alta Alumno*****\n\n");
 
-    indice = buscarLibre(vec, tam);
+    indice = buscarLibre(vec, tam); ///a ver si hay lugar libre, lo guarda en indice 1 si hay, -1 sino
 
     if( indice == -1){
         printf("\nSistema completo\n\n");
