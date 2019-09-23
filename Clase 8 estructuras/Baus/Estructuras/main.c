@@ -3,7 +3,7 @@
 
 #define TAM 5
 
-typedef struct
+typedef struct ///estructura de datos fecha
 {
     int dia;
     int mes;
@@ -24,8 +24,8 @@ typedef struct
 
 } eAlumno;
 
-void mostrarAlumno( eAlumno al);
-void mostrarAlumnos( eAlumno vec[], int tam);
+void mostrarAlumno( eAlumno al);///muestra un alumno de la estructura
+void mostrarAlumnos( eAlumno vec[], int tam); ///muestra el vector completo
 void ordenarAlumnosLeg( eAlumno vec[], int tam);
 void ordenarAlumnosNombre( eAlumno vec[], int tam);
 
@@ -94,7 +94,7 @@ int main()
 void mostrarAlumno(eAlumno al)
 {
 
-    printf("%d %10s  %d  %c  %2d  %2d  %.2f %02d/%02d/%d\n",
+    printf("%d %10s  %d  %c  %2d  %2d  %.2f %02d/%02d/%d\n",///los num delante de la  mascara es para mostrar el digito ordenado
            al.legajo,
            al.nombre,
            al.edad,
