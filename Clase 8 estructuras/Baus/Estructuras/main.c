@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <conio.h>
+#include <string.h>
 #define TAM 5
 
 typedef struct ///estructura de datos fecha
@@ -62,7 +63,7 @@ int main()
 
         printf("Ingrese nota parcial 2: ");
         scanf("%d", &lista[i].notaParcial2);
-        /*
+
         printf("Ingrese dia ingreso: ");
         scanf("%d", &lista[i].fechaIngreso.dia);
 
