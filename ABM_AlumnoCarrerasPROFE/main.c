@@ -4,6 +4,7 @@
 #include <string.h>
 
 #define TAM 10
+#define TAMC 3
 
 typedef struct
 {
@@ -22,50 +23,68 @@ typedef struct
     int nota2;
     float promedio;
     eFecha fechaIngreso;
+    int idCarrera;
     int isEmpty;
 } eAlumno;
 
-void mostrarAlumno(eAlumno x);
-void mostrarAlumnos(eAlumno vec[], int tam);
+typedef struct{
+
+    int id;
+    char descripcion[20];
+
+}eCarrera;
+
+void mostrarAlumno(eAlumno x, eCarrera carreras[], int tam);
+void mostrarAlumnos(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
 void ordenarAlumnos(eAlumno vec[], int tam);
 void inicializarAlumnos(eAlumno vec[], int tam);
 int buscarLibre(eAlumno vec[], int tam);
 int buscarAlumno(int legajo, eAlumno vec[], int tam);
-int altaAlumno(eAlumno vec[], int tam);
-eAlumno newAlumno(int leg,char nombre[],int edad, char sexo, int nota1, int nota2, eFecha f);
-int bajaAlumno(eAlumno vec[], int tam);
-int ModificarAlumno(eAlumno vec[], int tam);
+int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC);
+eAlumno newAlumno(int leg,char nombre[],int edad, char sexo, int nota1, int nota2, eFecha f, int idCarrera);
+int bajaAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
+int ModificarAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
 int hardcodearAlumnos( eAlumno vec[], int tam, int cantidad);
+
+///Funciones Carrera
+void mostrarCarreras(eCarrera carreras[], int tam);
+void mostrarCarrera(eCarrera carrera);
+int cargarDescCarrera(int id, eCarrera carreras[], int tam, char desc[]);
 
 int menu();
 
 int main()
 {
+    int legajo = 20000;
+    eCarrera carreras[TAMC]={{1000,"TUP"},{1001,"TUSI"},{1002,"LIC"}};
     eAlumno lista[TAM];
     char salir = 'n';
 
     inicializarAlumnos( lista, TAM);
 
-    hardcodearAlumnos(lista, TAM, 5);///el numero final es la cantidad a mostrar hardcodeados
+    legajo = legajo + hardcodearAlumnos(lista, TAM, 6);
 
     do
     {
         switch( menu())
         {
         case 1:
-            altaAlumno(lista, TAM);
+            if(altaAlumno(lista, TAM, legajo, carreras, TAMC))
+            {
+                legajo++;
+            }
             break;
 
         case 2:
-            bajaAlumno(lista, TAM);
+            bajaAlumno(lista, TAM, carreras, TAMC);
             break;
 
         case 3:
-            ModificarAlumno(lista, TAM);
+            ModificarAlumno(lista, TAM, carreras, TAMC);
             break;
 
         case 4:
-            mostrarAlumnos(lista, TAM);
+            mostrarAlumnos(lista, TAM, carreras, TAMC);
             break;
 
         case 5:
@@ -76,8 +95,11 @@ int main()
         case 6:
             printf("Informes Alumno\n\n");
             break;
-
         case 7:
+            mostrarCarreras(carreras, TAMC);
+            break;
+
+        case 8:
             printf("Confirma salir?:");
             fflush(stdin);
             salir = getche();
@@ -105,7 +127,8 @@ int menu()
     printf("4-Listar alumnos\n");
     printf("5-Ordenar alumnos\n");
     printf("6-Informes alumno\n");
-    printf("7-Salir\n\n");
+    printf("7-Mostrar Carreras\n");
+    printf("8-Salir\n\n");
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
@@ -113,9 +136,12 @@ int menu()
 }
 
 
-void mostrarAlumno(eAlumno x)
+void mostrarAlumno(eAlumno x, eCarrera carreras[], int tam)
 {
-    printf("  %d     %s     %d    %c   %d  %d  %.2f %02d/%02d/%d\n",
+    char descCarrera[20];
+
+    cargarDescCarrera(x.idCarrera, carreras, tam, descCarrera);
+    printf("  %d  %10s   %d      %c    %2d    %2d       %3.2f     %02d/%02d/%d   %s\n",
            x.legajo,
            x.nombre,
            x.edad,
@@ -125,22 +151,23 @@ void mostrarAlumno(eAlumno x)
            x.promedio,
            x.fechaIngreso.dia,
            x.fechaIngreso.mes,
-           x.fechaIngreso.anio);
+           x.fechaIngreso.anio,
+           descCarrera);
 }
 
-void mostrarAlumnos(eAlumno vec[], int tam)
+void mostrarAlumnos(eAlumno vec[], int tam,  eCarrera carreras[], int tamC)
 {
 
     int flag = 0;
     system("cls");
 
-    printf(" Legajo Nombre Edad Sexo Nota1 Nota2 Promedio FIngreso\n");
+    printf(" Legajo    Nombre    Edad   Sexo  Nota1  Nota2  Promedio   FIngreso  Carrera\n\n");
 
     for(int i=0; i < tam; i++)
     {
         if( vec[i].isEmpty == 0)
         {
-            mostrarAlumno(vec[i]);
+            mostrarAlumno(vec[i], carreras, tamC);
             flag = 1;
         }
     }
@@ -161,7 +188,7 @@ void ordenarAlumnos(eAlumno vec[], int tam)
     {
         for(int j= i+1; j <tam; j++)
         {
-            if( vec[i].legajo > vec[j].legajo)
+            if( vec[i].sexo > vec[j].sexo)
             {
                 auxAlumno = vec[i];
                 vec[i] = vec[j];
@@ -169,6 +196,7 @@ void ordenarAlumnos(eAlumno vec[], int tam)
             }
         }
     }
+    printf("Alumnos Ordenados\n\n");
 }
 
 void inicializarAlumnos(eAlumno vec[], int tam)
@@ -210,24 +238,23 @@ int buscarAlumno(int legajo, eAlumno vec[], int tam)
     return indice;
 }
 
-int altaAlumno(eAlumno vec[], int tam)
+int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC)
 {
     int todoOk = 0;
     int indice;
-    int esta;
-    int legajo;
     char nombre[20];
     char sexo;
     int edad;
     int n1;
     int n2;
+    int idCarrera;
     eFecha fecha;
 
     system("cls");
 
     printf("*****Alta Alumno*****\n\n");
 
-    indice = buscarLibre(vec, tam); ///a ver si hay lugar libre, lo guarda en indice 1 si hay, -1 sino
+    indice = buscarLibre(vec, tam);
 
     if( indice == -1)
     {
@@ -235,46 +262,33 @@ int altaAlumno(eAlumno vec[], int tam)
     }
     else
     {
+        printf("Ingrese nombre: ");
+        fflush(stdin);
+        gets(nombre);
 
-        printf("Ingrese legajo: ");
-        scanf("%d", &legajo);
+        printf("Ingrese edad: ");
+        scanf("%d", &edad);
 
-        esta = buscarAlumno(legajo, vec, tam);
+        printf("Ingrese sexo: ");
+        fflush(stdin);
+        scanf("%c", &sexo);
 
-        if( esta != -1)
-        {
-            printf("\nEse legajo ya se encuentra registrado\n\n");
-            mostrarAlumno(vec[esta]);
+        printf("Ingrese nota 1: ");
+        scanf("%d", &n1);
 
-        }
-        else
-        {
-            printf("Ingrese nombre: ");
-            fflush(stdin);
-            gets(nombre);
+        printf("Ingrese nota 2: ");
+        scanf("%d", &n2);
 
-            printf("Ingrese edad: ");
-            scanf("%d", &edad);
+        printf("Ingrese fecha ingreso: ");
+        scanf("%d/%d/%d", &fecha.dia, &fecha.mes, &fecha.anio);
 
-            printf("Ingrese sexo: ");
-            fflush(stdin);
-            scanf("%c", &sexo);
+        mostrarCarreras(carreras, tamC);
+        printf("Ingrese id carrera: ");
+        scanf("%d", &idCarrera);
 
-            printf("Ingrese nota 1: ");
-            scanf("%d", &n1);
-
-            printf("Ingrese nota 2: ");
-            scanf("%d", &n2);
-
-            printf("Ingrese fecha ingreso: ");
-            scanf("%d/%d/%d", &fecha.dia, &fecha.mes, &fecha.anio);
-
-            vec[indice] = newAlumno(legajo, nombre, edad, sexo, n1, n2, fecha);
-            todoOk = 1;
-            printf("Alta exitosa!!\n\n");
-
-        }
-
+        vec[indice] = newAlumno(leg, nombre, edad, sexo, n1, n2, fecha, idCarrera);
+        todoOk = 1;
+        printf("Alta exitosa!!\n\n");
     }
 
     return todoOk;
@@ -287,7 +301,9 @@ eAlumno newAlumno(
     char sexo,
     int nota1,
     int nota2,
-    eFecha fecha)
+    eFecha fecha,
+    int idCarrera
+    )
 {
 
     eAlumno al;
@@ -299,13 +315,14 @@ eAlumno newAlumno(
     al.nota2 = nota2;
     al.promedio = (float) (nota1 + nota2 )/2;
     al.fechaIngreso = fecha;
+    al.idCarrera = idCarrera;
     al.isEmpty = 0;
 
     return al;
 }
 
 
-int bajaAlumno(eAlumno vec[], int tam)
+int bajaAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC)
 {
     int todoOk = 0;
     int legajo;
@@ -325,8 +342,7 @@ int bajaAlumno(eAlumno vec[], int tam)
     }
     else
     {
-
-        mostrarAlumno(vec[indice]);
+        mostrarAlumno(vec[indice], carreras, tamC);
 
         printf("\nConfirma baja?");
         fflush(stdin);
@@ -346,13 +362,12 @@ int bajaAlumno(eAlumno vec[], int tam)
 
     return todoOk;
 }
-int ModificarAlumno(eAlumno vec[], int tam)
+int ModificarAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC)
 {
 
     int todoOk = 0;
     int legajo;
     int indice;
-    char confirma;
     system("cls");
     printf("***** Modificar Alumno *****\n\n");
     printf("Ingrese legajo: ");
@@ -369,7 +384,7 @@ int ModificarAlumno(eAlumno vec[], int tam)
     else
     {
 
-        mostrarAlumno(vec[indice]);
+        mostrarAlumno(vec[indice], carreras, tamC);
 
         printf("1- Modificar nota1\n");
         printf("2- Modificar nota2\n");
@@ -399,38 +414,62 @@ int ModificarAlumno(eAlumno vec[], int tam)
 }
 
 
-int hardcodearAlumnos( eAlumno vec[], int tam, int cantidad)  ///recibe el vector, el tamaño y la cantidad de elementos a cargar, devuelve la cantidad de alumnos cargados, o 0.
+int hardcodearAlumnos( eAlumno vec[], int tam, int cantidad)
 {
-
-    int cont = 0; ///siempre declarar una variabla del tipo que va a devolver
+    int cont = 0;
 
     eAlumno suplentes[]=
     {
-        { 2000, "Juan", 20, 'm', 5, 7, 6,{1,5,2015}, 0},
-        { 2001, "Alberto", 22, 'm', 7, 8, 7.5,{30,7,2017}, 0},
-        { 2002, "Ana", 24, 'f', 10, 9, 9,{11,3,2014}, 0},
-        { 2003, "Matias", 25, 'm', 4, 6, 5,{22,4,2016}, 0},
-        { 2004, "Jimena", 29, 'f', 9, 7, 8,{4,3,2016}, 0},
-        { 2005, "Pablo", 22, 'm', 8, 5, 6.5,{3,4,2019}, 0},
-        { 2006, "Rodrigo", 23, 'm', 8, 8, 8,{1,7,2018}, 0},
-        { 2007, "Lucia", 20, 'f', 4, 8, 6,{2,9,2017}, 0},
-        { 2008, "Daniela", 21, 'f', 9, 9, 9,{1,4,2017}, 0},
-        { 2009, "Paula", 28, 'f', 7, 7, 7,{15,5,2016}, 0},
+        { 20000, "Juan", 20, 'm', 5, 7, 6, {12, 5, 2015}, 1000, 0},
+        { 20001, "Alberto", 21, 'm', 2, 8, 5, {12, 5, 2019},1001, 0},
+        { 20002, "Ana", 22, 'f', 4, 5, 4.5, {2, 7, 2018},1002, 0},
+        { 20003, "Luis", 20, 'm', 9, 8, 8.5, {21, 5, 2018},1000, 0},
+        { 20004, "Alicia", 21, 'f', 6, 7, 6.5, {11, 9, 2017},1001, 0},
+        { 20005, "Diego", 23, 'm', 2, 2, 2, {12, 4, 2014},1000, 0},
+        { 20006, "Sofia", 19, 'f', 8, 9, 8.5, {12, 2, 2014},1002, 0},
+        { 20007, "Clara", 21, 'f', 2, 4, 3, {28, 8, 2018},1001, 0},
+        { 20008, "Mauro", 20, 'm', 4, 7, 5.5, {23, 3, 2015},1001, 0},
+        { 20009, "Daniela", 22, 'f', 2, 8, 4, {10, 10, 2016},1000, 0},
+        { 20010, "Agustin", 24, 'm', 6, 7, 6.5, {1, 7, 2017},1002, 0},
     };
 
-    if (cantidad <=10 && tam>=cantidad)  ///condicion para cargar, la cantidad tiene que ser <= que lo que me piden
+    if( cantidad <= 10 && tam >= cantidad)
     {
-        for (int i=0; i<cantidad; i++)
+        for(int i=0; i < cantidad; i++)
         {
 
-            vec[i]=suplentes[i];
-            cont ++;
-
+            vec[i] = suplentes[i];
+            cont++;
         }
-
     }
- return cont;
 
+    return cont;
+}
+
+void mostrarCarreras(eCarrera carreras[], int tam){
+    printf(" Id   Descripcion\n\n");
+    for(int i=0; i < tam; i++){
+        mostrarCarrera( carreras[i]);
+    }
+    printf("\n");
+}
+
+void mostrarCarrera(eCarrera carrera){
+
+    printf("  %d      %10s\n", carrera.id, carrera.descripcion);
 
 }
 
+int cargarDescCarrera(int id, eCarrera carreras[], int tam, char desc[]){
+    int todoOk = 0;
+
+    for(int i=0; i < tam; i++){
+        if( id == carreras[i].id){
+            strcpy(desc, carreras[i].descripcion);
+            todoOk = 1;
+            break;
+        }
+    }
+
+    return todoOk;
+}
