@@ -11,11 +11,7 @@
 	<conio.h>
 	<string.h>
 
-<<<<<<< HEAD
-1569293228 source:c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abm_alumnocarrerasprofe\main.c
-=======
-1569624315 source:c:\users\alumno\desktop\programacion1baus\clase10_seguimosabm\abm_alumnocarrerasprofe\main.c
->>>>>>> a368ae57f890e6b7bc3583ae666c68c87c002a69
+1569624368 source:c:\users\alumno\desktop\abmalumnocarreras\main.c
 	<stdio.h>
 	<stdlib.h>
 	<conio.h>

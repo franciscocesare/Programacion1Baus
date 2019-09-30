@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1569279092 source:c:\users\alumno\desktop\abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569285938 source:c:\users\alumno\desktop\abmalumnoautoincremental\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569633139 source:c:\users\alumno\desktop\abmalumnocarreras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569806151 source:c:\users\usuario\desktop\programacion1baus\abmalumnocarrerasinformes profe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carreras.h"
+	"ABMalumnos.h"
+
+1569811481 source:c:\users\usuario\desktop\programacion1baus\abmalumnocarrerasinformes profe\abmalumnos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"ABMalumnos.h"
+
+1569807384 c:\users\usuario\desktop\programacion1baus\abmalumnocarrerasinformes profe\abmalumnos.h
+	"carreras.h"
+
+1569813072 c:\users\usuario\desktop\programacion1baus\abmalumnocarrerasinformes profe\carreras.h
+
+1569813586 source:c:\users\usuario\desktop\programacion1baus\abmalumnocarrerasinformes profe\carreras.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carreras.h"
+	"ABMalumnos.h"
+
