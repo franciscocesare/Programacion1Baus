@@ -27,7 +27,7 @@ typedef struct
     int isEmpty;
 } eAlumno;
 
-typedef struct ///lo que tegçngo en apuntes para vincular con la stryuc Alumnos
+typedef struct ///lo que tengo en apuntes para vincular con la struc Alumnos
 {
     int id;
     char descripcion[20];

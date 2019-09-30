@@ -175,7 +175,7 @@ void ordenarAlumnos(eAlumno vec[], int tam)
     printf("Alumnos Ordenados\n\n");
 }
 
-void inicializarAlumnos(eAlumno vec[], int tam)
+void inicializarAlumnos(eAlumno vec[], int tam)///inicia el array, pone todas las posicciones en 1. VACIO
 {
     for(int i = 0; i < tam; i++)
     {
@@ -184,7 +184,7 @@ void inicializarAlumnos(eAlumno vec[], int tam)
 }
 
 
-int buscarLibre(eAlumno vec[], int tam)
+int buscarLibre(eAlumno vec[], int tam)///
 {
     int indice = -1;
 

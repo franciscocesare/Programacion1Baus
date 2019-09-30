@@ -5,22 +5,22 @@
 #include <string.h>
 
 
-void mostrarAlumno(eAlumno x, eCarrera carreras[], int tam)
+void mostrarAlumno(eAlumno alumno, eCarrera carreras[], int tam)
 {
-    char descCarrera[20];
+    char descCarrera[20];///vector declarado para sumar a mostrar alumno las descrip de las carreras
 
-    cargarDescCarrera(x.idCarrera, carreras, tam, descCarrera);
+    cargarDescCarrera(alumno.idCarrera, carreras, tam, descCarrera);
     printf("  %d  %10s   %d      %c    %2d    %2d       %3.2f     %02d/%02d/%d   %s\n",
-           x.legajo,
-           x.nombre,
-           x.edad,
-           x.sexo,
-           x.nota1,
-           x.nota2,
-           x.promedio,
-           x.fechaIngreso.dia,
-           x.fechaIngreso.mes,
-           x.fechaIngreso.anio,
+           alumno.legajo,
+           alumno.nombre,
+           alumno.edad,
+           alumno.sexo,
+           alumno.nota1,
+           alumno.nota2,
+           alumno.promedio,
+           alumno.fechaIngreso.dia,
+           alumno.fechaIngreso.mes,
+           alumno.fechaIngreso.anio,
            descCarrera);
 }
 
@@ -107,7 +107,7 @@ int buscarAlumno(int legajo, eAlumno vec[], int tam)
     return indice;
 }
 
-int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC)
+int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC)///le paso tb el vector carreras, de la estruc Carreras
 {
     int todoOk = 0;
     int indice;
@@ -125,7 +125,7 @@ int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC)
 
     indice = buscarLibre(vec, tam);
 
-    if( indice == -1)
+    if( indice == -1)///si buscar  devuelve -1, no hay lugar
     {
         printf("\nSistema completo\n\n");
     }
@@ -163,10 +163,10 @@ int altaAlumno(eAlumno vec[], int tam, int leg, eCarrera carreras[], int tamC)
     return todoOk;
 }
 
-eAlumno newAlumno(
+eAlumno newAlumno( ///funcion para dar de alta un alumno
     int leg,
     char nombre[],
-    int edad,
+    int edad,   ///parametros que recibe
     char sexo,
     int nota1,
     int nota2,
@@ -176,8 +176,8 @@ eAlumno newAlumno(
 {
 
     eAlumno al;
-    al.legajo = leg;
-    strcpy( al.nombre, nombre);
+    al.legajo = leg;///guarda el valor recibido en cada variable, a la estructura alumno de eAlumno
+    strcpy( al.nombre, nombre);///copia el array de nombre, a al.nombre
     al.sexo = sexo;
     al.edad = edad;
     al.nota1 = nota1;
@@ -219,7 +219,7 @@ int bajaAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC)
 
         if( confirma == 's')
         {
-            vec[indice].isEmpty = 1;
+            vec[indice].isEmpty = 1;///pone isEmpty en 1 por la baja logica
             todoOk = 1;
             printf("Baja exitosa!!!");
         }

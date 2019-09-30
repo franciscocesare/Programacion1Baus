@@ -38,3 +38,30 @@
 	"carrera.h"
 	"alumno.h"
 
+1569295177 source:c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abmalumnocarreraslibraryprofe\alumno.c
+	"alumno.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569293228 c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abmalumnocarreraslibraryprofe\alumno.h
+	"carrera.h"
+
+1569293228 c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abmalumnocarreraslibraryprofe\carrera.h
+
+1569293228 source:c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abmalumnocarreraslibraryprofe\carrera.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+
+1569293228 source:c:\users\usuario\desktop\programacion1baus\clase10_seguimosabm\abmalumnocarreraslibraryprofe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+	"alumno.h"
+
