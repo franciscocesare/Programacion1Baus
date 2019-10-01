@@ -1,8 +1,8 @@
-#include "carreras.h"
+#include "carrera.h"
 
-#ifndef ABMALUMNOS_H_INCLUDED
-#define ABMALUMNOS_H_INCLUDED
 
+#ifndef ALUMNO_H_INCLUDED
+#define ALUMNO_H_INCLUDED
 
 typedef struct
 {
@@ -25,7 +25,8 @@ typedef struct
     int isEmpty;
 } eAlumno;
 
-///FUNCIONES DE ABM ALUMNOS
+#endif // ALUMNO_H_INCLUDED
+
 void mostrarAlumno(eAlumno x, eCarrera carreras[], int tam);
 void mostrarAlumnos(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
 void ordenarAlumnos(eAlumno vec[], int tam);
@@ -37,6 +38,3 @@ eAlumno newAlumno(int leg,char nombre[],int edad, char sexo, int nota1, int nota
 int bajaAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
 int ModificarAlumno(eAlumno vec[], int tam, eCarrera carreras[], int tamC);
 int hardcodearAlumnos( eAlumno vec[], int tam, int cantidad);
-
-#endif // ABMALUMNOS_H_INCLUDED
-

@@ -45,3 +45,39 @@
 	"carreras.h"
 	"ABMalumnos.h"
 
+1569888290 source:c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\abmalumnos.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"ABMalumnos.h"
+
+1569884359 c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\abmalumnos.h
+	"carreras.h"
+
+1569881622 c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\carreras.h
+
+1569891144 source:c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carreras.h"
+	"ABMalumnos.h"
+
+1569881622 source:c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\carreras.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carreras.h"
+	"ABMalumnos.h"
+
+1569884300 source:c:\users\alumno\desktop\programacion1baus\abmalumnocarrerasinformes profe\informes.c
+	"ABMalumnos.h"
+	"carreras.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
