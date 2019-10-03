@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1570069912 source:c:\users\usuario\desktop\programacion1baus\tp2 abm empleados\array employees\arrayemployees.c
+
+1570077084 source:c:\users\usuario\desktop\programacion1baus\tp2 abm empleados\array employees\main.c
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"conio.h"
+
