@@ -1,0 +1,121 @@
+# depslib dependency file v1.0
+1569279092 source:c:\users\alumno\desktop\abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569285938 source:c:\users\alumno\desktop\abmalumnoautoincremental\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569286819 source:c:\users\alumno\desktop\abmalumnocarreras\alumno.c
+	"alumno.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569286799 c:\users\alumno\desktop\abmalumnocarreras\alumno.h
+	"carrera.h"
+
+1569286679 c:\users\alumno\desktop\abmalumnocarreras\carrera.h
+
+1569286850 source:c:\users\alumno\desktop\abmalumnocarreras\carrera.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+
+1569286874 source:c:\users\alumno\desktop\abmalumnocarreras\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+	"alumno.h"
+
+1569286820 source:c:\users\alumno\desktop\abmalumnocarreraslibrary\alumno.c
+	"alumno.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569286800 c:\users\alumno\desktop\abmalumnocarreraslibrary\alumno.h
+	"carrera.h"
+
+1569286680 c:\users\alumno\desktop\abmalumnocarreraslibrary\carrera.h
+
+1569286852 source:c:\users\alumno\desktop\abmalumnocarreraslibrary\carrera.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+
+1569286876 source:c:\users\alumno\desktop\abmalumnocarreraslibrary\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+	"alumno.h"
+
+1569620750 source:c:\users\alumno\desktop\abmalumnos\alumno.c
+	"alumno.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569620750 c:\users\alumno\desktop\abmalumnos\alumno.h
+	"carrera.h"
+
+1569620750 c:\users\alumno\desktop\abmalumnos\carrera.h
+
+1569620750 source:c:\users\alumno\desktop\abmalumnos\carrera.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+
+1569632187 source:c:\users\alumno\desktop\abmalumnos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+	"alumno.h"
+
+1569627563 source:c:\users\manu_\desktop\programacionuno\clase 11\abmalumnos\alumno.c
+	"alumno.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+
+1569627563 c:\users\manu_\desktop\programacionuno\clase 11\abmalumnos\alumno.h
+	"carrera.h"
+
+1569627563 c:\users\manu_\desktop\programacionuno\clase 11\abmalumnos\carrera.h
+
+1569627563 source:c:\users\manu_\desktop\programacionuno\clase 11\abmalumnos\carrera.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+
+1569628131 source:c:\users\manu_\desktop\programacionuno\clase 11\abmalumnos\main.c
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+	<string.h>
+	"carrera.h"
+	"alumno.h"
+
