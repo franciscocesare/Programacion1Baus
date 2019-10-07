@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1570440373 source:c:\users\manu_\desktop\practicaparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"biblioteca.h"
+
+1570438795 source:c:\users\manu_\desktop\practicaparcial\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"biblioteca.h"
+
+1570382312 c:\users\manu_\desktop\practicaparcial\biblioteca.h
+
+1570424842 source:c:\users\usuario\desktop\practicaparcial\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"biblioteca.h"
+
+1570424842 c:\users\usuario\desktop\practicaparcial\biblioteca.h
+
+1570424842 source:c:\users\usuario\desktop\practicaparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"biblioteca.h"
+

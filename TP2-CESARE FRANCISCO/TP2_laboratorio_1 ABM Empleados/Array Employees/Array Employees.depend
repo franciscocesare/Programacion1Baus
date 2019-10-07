@@ -44,3 +44,21 @@
 	"conio.h"
 	"ctype.h"
 
+1570242794 source:c:\users\usuario\desktop\programacion1baus\tp2-cesare francisco\tp2_laboratorio_1 abm empleados\array employees\arrayemployees.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"conio.h"
+	"ctype.h"
+
+1570223128 c:\users\usuario\desktop\programacion1baus\tp2-cesare francisco\tp2_laboratorio_1 abm empleados\array employees\arrayemployees.h
+
+1570242794 source:c:\users\usuario\desktop\programacion1baus\tp2-cesare francisco\tp2_laboratorio_1 abm empleados\array employees\main.c
+	"ArrayEmployees.h"
+	<stdio.h>
+	<stdlib.h>
+	"string.h"
+	"conio.h"
+	"ctype.h"
+

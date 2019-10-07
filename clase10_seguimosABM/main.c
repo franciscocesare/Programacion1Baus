@@ -343,7 +343,7 @@ int bajaAlumno(eAlumno vec[], int tam)
     else
     {
 
-        mostrarAlumno(vec[indice], carrera[]);///xq me tira error?
+        mostrarAlumno(x, carrera);///xq me tira error?
 
         printf("\nConfirma baja?");
         fflush(stdin);
