@@ -68,6 +68,7 @@ void mostrarComidasXSector(eAlmuerzo almuerzos[], int tamAlmuerzo, eEmpleado emp
 int main()
 {
 
+
     char seguir = 's';
     eEmpleado lista[10];
     eSector sectores[] = ///HARDCODEO DE ESTRUC SECTORES
