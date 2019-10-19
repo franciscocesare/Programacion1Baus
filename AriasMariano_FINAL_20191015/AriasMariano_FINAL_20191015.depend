@@ -1,0 +1,81 @@
+# depslib dependency file v1.0
+1571183878 source:e:\ariasmariano_final_20191015\entidades.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571095626 e:\ariasmariano_final_20191015\utn.h
+
+1571082764 e:\ariasmariano_final_20191015\linkedlist.h
+
+1571182644 e:\ariasmariano_final_20191015\entidades.h
+
+1571087926 source:e:\ariasmariano_final_20191015\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571182920 source:e:\ariasmariano_final_20191015\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571183998 source:e:\ariasmariano_final_20191015\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571183878 source:c:\users\alumno\desktop\ariasmariano_final_20191015\entidades.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571095626 c:\users\alumno\desktop\ariasmariano_final_20191015\utn.h
+
+1571082764 c:\users\alumno\desktop\ariasmariano_final_20191015\linkedlist.h
+
+1571182644 c:\users\alumno\desktop\ariasmariano_final_20191015\entidades.h
+
+1571087926 source:c:\users\alumno\desktop\ariasmariano_final_20191015\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571184028 source:c:\users\alumno\desktop\ariasmariano_final_20191015\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571183998 source:c:\users\alumno\desktop\ariasmariano_final_20191015\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
