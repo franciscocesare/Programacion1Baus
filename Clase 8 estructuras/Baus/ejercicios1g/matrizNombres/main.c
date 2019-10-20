@@ -9,6 +9,7 @@ void mostrarNombres( char mat[][20], int filas);
 int main()
 {
     char nombres[FILAS][COLUMNAS]= {"juan", "Lucia", "Pedro", "Ana", "Miguel"};
+
     char auxCad[100];
 
     /* for(int i=0; i < FILAS; i++)

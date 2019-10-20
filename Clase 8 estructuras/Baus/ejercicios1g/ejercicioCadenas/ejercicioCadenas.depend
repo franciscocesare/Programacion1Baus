@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1568671617 source:c:\users\alumno\desktop\ejerciciocadenas\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<ctype.h>
-

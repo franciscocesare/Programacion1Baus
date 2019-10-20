@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1570466981 source:c:\users\manu_\desktop\practicaparcial\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"biblioteca.h"
+
+1570438795 source:c:\users\manu_\desktop\practicaparcial\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	<conio.h>
+	"biblioteca.h"
+
+1570382312 c:\users\manu_\desktop\practicaparcial\biblioteca.h
+

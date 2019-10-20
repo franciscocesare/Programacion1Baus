@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1568671617 source:c:\users\alumno\desktop\ejerciciocadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1570677196 source:c:\users\usuario\desktop\programacion1baus\clase 8 estructuras\baus\ejercicios1g\ejerciciocadenas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1570829012 source:c:\users\usuario\desktop\programacion1baus\concatenar con strcat\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
