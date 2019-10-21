@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1571610475 source:c:\users\usuario\desktop\programacion1baus\parciallaboratoriocesarefrancisco\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1571625880 source:c:\users\usuario\desktop\practica parcial\parciallaboratoriocesarefrancisco\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+
+1571687691 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"input.h"
+	"categorias.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"informes.h"
+
+1571684831 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\alquileres.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"categorias.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+
+1571680026 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\input.h
+
+1571636509 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\categorias.h
+
+1571636439 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\juegos.h
+	"categorias.h"
+
+1571687456 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\clientes.h
+
+1571637365 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\alquileres.h
+
+1571687045 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\categorias.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"categorias.h"
+
+1571687456 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"clientes.h"
+
+1571685355 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"categorias.h"
+	"juegos.h"
+	"clientes.h"
+	"alquileres.h"
+	"informes.h"
+
+1571686390 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\input.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"input.h"
+
+1571687045 source:c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"input.h"
+	"categorias.h"
+	"juegos.h"
+
+1571669611 c:\users\usuario\desktop\practicandotps-pancho\practica parcial\parciallaboratoriocesarefrancisco\informes.h
+
