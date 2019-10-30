@@ -35,7 +35,7 @@ int main()
     inicializarAlquileres(alquiler, TAMAlquiler);
 
     idAlquiler+=hardcodearAlquileres(alquiler, TAMAlquiler, 5);
-    idCliente += hardcodearClientes(lista, TAMClientes, 10);
+    idCliente += hardcodearClientes(lista, TAMClientes, 9);
 
     harcodearJuego(juegos, TAMJuegos);
     hardcodearCategoria(categorias, TAMCategoria);
