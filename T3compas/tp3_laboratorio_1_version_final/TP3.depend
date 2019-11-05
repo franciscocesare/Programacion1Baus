@@ -99,3 +99,49 @@
 
 1560475979 c:\users\admiral\documents\tp3_laboratorio_1\parser.h
 
+1561413204 source:c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"validaciones.h"
+	"parser.h"
+
+1561413204 c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\linkedlist.h
+
+1561413204 c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\employee.h
+
+1561413204 c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\validaciones.h
+
+1561413204 c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\parser.h
+
+1561413204 source:c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"validaciones.h"
+
+1572802891 source:c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561413204 c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\controller.h
+
+1561413204 source:c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"validaciones.h"
+
+1561413204 source:c:\users\usuario\desktop\programacion utn\carpetas de compañeros\tps laboratorio anto\tp3_laboratorio_1_version_final\validaciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"validaciones.h"
+

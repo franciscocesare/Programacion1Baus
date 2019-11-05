@@ -26,6 +26,7 @@ int main()
     int flagBoton1 = 0; // para saber si cargó los datos desde el archivo de texto
     int flagBoton2 = 0; // para saber si cargó los datos desde el archivo binario
     LinkedList* listaEmpleados = ll_newLinkedList();
+
     do{
         getIntInRange(&option,"\nSeleccione una opcion del menu: \n\n"
                       "1)Cargar los datos de los empleados desde el archivo (texto)\n"
@@ -42,11 +43,13 @@ int main()
 
         switch(option)
         {
+
             case 1:
                 if(!controller_loadFromText("data.csv",listaEmpleados))
                 {
                     flagBoton1 = 1;
                 }
+                system("cls");
                 break;
 
             case 2:
@@ -65,6 +68,7 @@ int main()
                 {
                     printf("\nEs necesario cargar los datos de los empleados del archivo de texto o binario antes de realizar esta accion\n\n");
                 }
+                system("pause");
                 break;
 
             case 4:

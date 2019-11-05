@@ -2,6 +2,21 @@
 #include <stdlib.h>
 #include <string.h>
 
+/*
+//eAuto* hacer newauto
+//eAuto * new auto param(int id, char marca, int modelo, float precio);
+
+//mostrarauto
+//mostrarAutos
+//sort(comparison)
+
+geter y setter
+seter setear un valor, con validaciones para proteger
+geter obtener un valor de algun campo. retorna del mismo tipo de lo que estoy geteando
+
+*/
+
+
 typedef struct
 {
     int id;
@@ -10,10 +25,10 @@ typedef struct
     float precio;
 } eAuto;
 
-// Mostrar
+/// Mostrar
 int mostrarAuto(eAuto* unAuto);
 int mostrarAutos(eAuto** autos, int tam);
-// Getters y Setters
+/// Getters y Setters
 int setIdAuto(eAuto* unAuto, int id);
 int setModeloAuto(eAuto* unAuto, int modelo);
 int setPrecioAuto(eAuto* unAuto, float precio);
@@ -22,13 +37,13 @@ int getIdAuto(eAuto* unAuto);
 int getModeloAuto(eAuto* unAuto);
 float getPrecioAuto(eAuto* unAuto);
 int getMarcaAuto(eAuto* unAuto, char* marca);
-// Constructores
+/// Constructores
 eAuto* newAuto();
 eAuto* newAutoParam(int id, char* marca, int modelo, float precio);
-// Comparison
+/// Comparison
 
 
-// Escritura/Lectura Archivos
+/// Escritura/Lectura Archivos
 int guardarAutosBinario( eAuto** lista, int tam, char* path);
 int guardarAutosCSV( eAuto** lista, int tam, char* path);
 
@@ -39,9 +54,16 @@ int main()
     int cant = 0;
     char buffer[4][30];
 
+    ///buena practica a NULL, aca vamos a cargar el csv de autos
+    ///buena practica inicializar en NULL cada puntero
+
     FILE* f = NULL;
     eAuto* auxAuto = NULL;
     eAuto** auxLista = NULL;
+
+    /*creamos el primer puntero, que apunta a otro puntero, y pedimos un primer lugar donde
+    vamos a poner la direccion de memoria de un auto. Despues con realloc vamos a ir
+    sumandole mas punteros al array que apuntan a diferentes autos*/
     eAuto** lista = (eAuto**) malloc(sizeof(eAuto*));
     if( lista == NULL)
     {
@@ -60,6 +82,8 @@ int main()
 
     fscanf(f, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
 
+    /*fscanf devuelve la cantidad de elementos que pudo cargar, si devuelve 4 esta ok.
+        lo almacenamos en cant*/
     while( !feof(f) )
     {
         cant =  fscanf(f, "%[^,],%[^,],%[^,],%[^\n]\n", buffer[0], buffer[1], buffer[2], buffer[3]);
@@ -68,12 +92,14 @@ int main()
             break;
         }
         else
-        {
+        {   ///atoi parsea a int un string, atof parsea a float un string
             auxAuto = newAutoParam(atoi(buffer[0]), buffer[1], atoi(buffer[2]), atof(buffer[3]));
             if(auxAuto != NULL)
-            {
+            {    ///el contenido de auxAuto lo copiamos al array de punteros donde apunta lista
                 *(lista + tam) = auxAuto;
                 tam++;
+                /*tam + 1 es porque tam= la cantidad de elementos y tam+1=es el proximo espacio libre
+                ya preparado*/
                 auxLista = (eAuto**) realloc(lista, sizeof(eAuto*) * (tam + 1));
                 if(auxLista != NULL)
                 {
@@ -82,11 +108,12 @@ int main()
             }
         }
     }
+    ///SIEMPRE despues de leerlo cerrar el archivo
     fclose(f);
 
     mostrarAutos(lista, tam);
 
-    //--------------- Guardo los autos en un archivo binario-----------
+    ///--------------- Guardo los autos en un archivo binario-----------
 
     if( guardarAutosBinario(lista, tam, "autos.bin"))
     {
@@ -106,6 +133,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
+    ///lo abrimos para leer el archivo
     f = fopen("autos.bin", "rb");
     if( f == NULL)
     {
@@ -116,22 +144,24 @@ int main()
 
 
     while( !feof(f) )
-    {
+    {   ///conseguimos el espacio en memorio con newAuto y guardamos el puntero en auxAuto
         auxAuto = newAuto();
         if(auxAuto ==NULL)
         {
             break;
         }
-
+        ///hacemos la lectura y la vamos guardando en la dir de memorio que apunta auxAuto
         cant = fread( auxAuto, sizeof(eAuto), 1, f);
         if( cant < 1)
         {
             break;
         }
         else
-        {
+        {   ///el contenido de auxAuto lo copiamos al array de punteros donde apunta lista
             *(lista2 + tam2) = auxAuto;
             tam2++;
+             /*tam + 1 es porque tam= la cantidad de elementos y tam+1=es el proximo espacio libre
+            ya preparado*/
             auxLista = (eAuto**) realloc(lista2, sizeof(eAuto*) * (tam2 + 1));
             if(auxLista != NULL)
             {
@@ -139,7 +169,7 @@ int main()
             }
         }
     }
-
+///SIEMPRE despues de leerlo cerramos el archivo
 fclose(f);
 
 mostrarAutos(lista2, tam2);
@@ -185,7 +215,7 @@ int getIdAuto(eAuto* unAuto)
 int setMarcaAuto(eAuto* unAuto, char* marca)
 {
     int todoOk=0;
-    if( unAuto != NULL && marca != NULL && strlen(marca) >= 3)
+    if( unAuto != NULL && marca != NULL && strlen(marca) >= 3) ///cualquier regla que deba cumplir el campo lo valido aca
     {
         strcpy(unAuto->marca, marca);
         todoOk = 1;
@@ -207,7 +237,7 @@ int getMarcaAuto(eAuto* unAuto, char* marca)
 int setModeloAuto(eAuto* unAuto, int modelo)
 {
     int todoOk=0;
-    if( unAuto != NULL && modelo >= 1980 && modelo <= 2020)
+    if( unAuto != NULL && modelo >= 1980 && modelo <= 2020) ///cualquier regla que deba cumplir el campo lo valido aca
     {
         unAuto->modelo = modelo;
         todoOk = 1;
@@ -229,8 +259,8 @@ int getModeloAuto(eAuto* unAuto)
 int setPrecioAuto(eAuto* unAuto, float precio)
 {
     int todoOk=0;
-    if( unAuto != NULL && precio >= 500 && precio <= 1500)
-    {
+    if( unAuto != NULL && precio >= 500 && precio <= 1500) ///cualquier regla que deba cumplir el campo lo valido aca
+    {                                                    ///se podria validar que no sean letras
         unAuto->precio = precio;
         todoOk = 1;
     }
@@ -250,7 +280,7 @@ float getPrecioAuto(eAuto* unAuto)
 
 
 
-int mostrarAuto(eAuto* unAuto)
+int mostrarAuto(eAuto* unAuto)///le pasamos puntero a estruc Auto, para entrar en un auto
 {
     int todoOk = 0;
 
@@ -261,7 +291,10 @@ int mostrarAuto(eAuto* unAuto)
     }
     return todoOk;
 }
-int mostrarAutos(eAuto** autos, int tam)
+
+///le pasamos el puntero a punteros que guarda la dir de memoria a la estructura auto.
+///Osea recibe directamente el array de punteros
+int mostrarAutos(eAuto** autos, int tam) ///por eso doble **
 {
 
     int todoOk = 0;
@@ -276,6 +309,8 @@ int mostrarAutos(eAuto** autos, int tam)
     }
     return todoOk;
 }
+
+///esta funcion se utiliza para designar el espacio en memoria para el nuevo auto y obtener el puntero
 
 eAuto* newAuto()
 {
@@ -301,7 +336,7 @@ eAuto* newAutoParam(int id, char* marca, int modelo, float precio)
             && setMarcaAuto(nuevo, marca)
             && setPrecioAuto(nuevo, precio) == 0)
         {
-            free(nuevo);
+            free(nuevo); ///liberamos ese espacio en memoria porque fallo la carga
             nuevo = NULL;
         }
     }

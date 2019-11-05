@@ -52,7 +52,7 @@ int employee_setId(Employee* this, char* value)
     return retorno;
 }
 
-int employee_setSueldo(Employee* this,char* value)///this vendria empleado
+int employee_setSueldo(Employee* this,char* value)
 {
     int auxSueldo;
     int retorno = -1;
@@ -200,24 +200,24 @@ int employee_findFree(Employee* arrayEmployee[], int lenEmployee)
  *                  [-1] si pEmployee1 es menor que pEmployee2
  *
  */
-int employee_sort(void* pEmployee1, void* pEmployee2) // para usar en ll_sort
+int employee_sort(void* pEmployee1, void* pEmployee2) /// para usar en ll_sort
 {
     int retorno;
-    int strcmp_r; // para guardar el retorno de strcmp
+    int strcmp_r; /// para guardar el retorno de strcmp
     Employee* pEmpleado1 = (Employee*) pEmployee1;
     Employee* pEmpleado2 = (Employee*) pEmployee2;
 
     strcmp_r = strcmp(pEmpleado1->nombre, pEmpleado2->nombre);
 
-    if(strcmp_r > 0) // pEmployee1 > pEmployee2
+    if(strcmp_r > 0) /// pEmployee1 > pEmployee2
     {
         retorno = 1;
     }
-    else if(strcmp_r < 0) // pEmployee1 < pEmployee2
+    else if(strcmp_r < 0) /// pEmployee1 < pEmployee2
     {
         retorno = -1;
     }
-    else // pEmployee1 == pEmployee2
+    else /// pEmployee1 == pEmployee2
     {
         retorno = 0;
     }
