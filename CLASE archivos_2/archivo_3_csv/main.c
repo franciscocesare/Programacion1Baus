@@ -65,7 +65,7 @@ int main()
     return 0;
 }
 
-///constructor crea empleados en el heap
+///constructor crea empleados en el heap, reserva memoria
 eEmpleado* new_Empleado()
 {
     eEmpleado* e;

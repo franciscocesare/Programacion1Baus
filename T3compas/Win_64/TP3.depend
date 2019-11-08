@@ -145,3 +145,49 @@
 
 1560456546 c:\users\tomas\desktop\bibliotecas-master\win_64\parser.h
 
+1572922522 source:c:\users\usuario\desktop\programacion1baus\t3compas\win_64\arraynuevo.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arraynuevo.h"
+
+1572922522 c:\users\usuario\desktop\programacion1baus\t3compas\win_64\arraynuevo.h
+
+1572922522 source:c:\users\usuario\desktop\programacion1baus\t3compas\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+	"arraynuevo.h"
+
+1572922522 c:\users\usuario\desktop\programacion1baus\t3compas\win_64\employee.h
+
+1572922522 source:c:\users\usuario\desktop\programacion1baus\t3compas\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"arraynuevo.h"
+
+1572922522 c:\users\usuario\desktop\programacion1baus\t3compas\win_64\linkedlist.h
+
+1572922522 c:\users\usuario\desktop\programacion1baus\t3compas\win_64\controller.h
+
+1572922522 source:c:\users\usuario\desktop\programacion1baus\t3compas\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1573015435 source:c:\users\usuario\desktop\programacion1baus\t3compas\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"Controller.h"
+	"parser.h"
+	"arraynuevo.h"
+
+1572922522 c:\users\usuario\desktop\programacion1baus\t3compas\win_64\parser.h
+

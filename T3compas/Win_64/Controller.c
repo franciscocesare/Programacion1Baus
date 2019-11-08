@@ -83,7 +83,7 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
             if(newEmployee != NULL)
             {
                 if(ll_add(pArrayListEmployee,newEmployee) == 0)
-                    {
+                    {controller_addEmployee;
                        retorno = 0;
                     }
             }
