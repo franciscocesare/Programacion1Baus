@@ -110,15 +110,8 @@ int main()
             }
             else
             {
-                if(controller_removeEmployee(listaEmpleados))
-                {
-                    system("cls");
-                    printf("Se ha eliminado al empleado");
-                }
-                else
-                {
-                    printf("Error. Baja no realizada");
-                }
+                controller_removeEmployee(listaEmpleados);
+                system("pause");
             }
             break;
         case 6:

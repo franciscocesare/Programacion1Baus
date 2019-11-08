@@ -143,7 +143,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
         {
             for (i=0; i<ll_len(pArrayListEmployee); i++) // recorro la lista de empleados
             {
-               pEmpleado= ll_get(pArrayListEmployee, i); // me guardo el empleado actual
+                pEmpleado= ll_get(pArrayListEmployee, i); // me guardo el empleado actual
 
                 if(pEmpleado->id == id) // pregunto si el empleado actual es el que busco
                 {
@@ -151,7 +151,7 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
                     do
                     {
                         printf("\nESE ID CORRESPONDE AL EMPLEADO:\n\n ID   NOMBRE    \n%d %6s \n",pEmpleado->id,pEmpleado->nombre);
-                    system("pause");
+                        system("pause");
                         getIntInRange(&option,"\nSeleccione un campo a modificar: \n\n"
                                       "1)Modificar Nombre\n"
                                       "2)Modificar Horas Trabajadas\n"
@@ -204,67 +204,6 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
     return retorno;
 }
 
-/*int controller_editEmployee(LinkedList* pArrayListEmployee)
-{
-    Employee* eEmpleado;
-    int aux=0;
-    int aux_id;
-    char aux_nombre[30];
-    int aux_horasTrabajadas;
-    int aux_sueldo;
-    int i;
-    char answer;
-
-    if(pArrayListEmployee==NULL)
-    {
-        printf("\nError");
-    }
-    else
-    {
-        getInt(&aux_id,"INGRESE EL ID A MODIFICAR","ERROR AL CARGAR EL DATO");
-        ///aux_id=getIn("\n Ingrese numero de Id a modificar: ");
-        for(i=0; i<ll_len(pArrayListEmployee); i++)
-        {
-            eEmpleado=ll_get(pArrayListEmployee,i);
-            if(aux_id==eEmpleado->id)
-            {
-                printf("\nESE ID CORRESPONDE AL EMPLEADO:\n %d %s %d %d\n",eEmpleado->id,eEmpleado->nombre,eEmpleado->horasTrabajadas,eEmpleado->sueldo);
-
-                answer=getChar("\nDESEA MODIFICAR NOMBRE? s/n : ");
-                if(answer=='s' || answer=='S')
-                {
-                    getStringLetras(aux_nombre,"\nINGRESE EL NOMBRE: ","E\nRROR INTENTELO NUEVAMENTE", 2);
-                    ///getString("\n Ingrese nombre: ", aux_nombre);
-                    aux=employee_setNombre(eEmpleado, aux_nombre);
-                    answer=' ';
-                }
-                fflush(stdin);
-                answer=getChar("\nDESEA MODIFICAR HORAS TRABAJADAS? s/n : ");
-                if(answer=='s' || answer=='S')
-                {
-                    getIntInRange(&aux_horasTrabajadas,"\nINGRESE LAS HORAS TRABAJADAS: ", "ERROR, NO SE CARGO EL DAT0",1,72,2);
-                    ///aux_horasTrabajadas=getIn("\n Ingrese horas trabajadas: ");
-                    aux=employee_setHorasTrabajadas(eEmpleado,aux_horasTrabajadas);
-                    answer=' ';
-                }
-                fflush(stdin);
-                answer=getChar("\nDESEA MODIFICAR SUELDO? s/n : ");
-                if(answer=='s' || answer=='S')
-                {
-                    getInt(&aux_sueldo, "INGRESE EL SUELDO: ","ERROR, NO SE CARGO EL SUELDO");
-                    ///aux_sueldo=getIn("\n Ingrese nuevo sueldo: ");
-                    aux=employee_setSueldo(eEmpleado,aux_sueldo);
-                }
-                fflush(stdin);
-                ll_set(pArrayListEmployee, i, eEmpleado);
-                aux=1;
-
-            }
-        }
-    }
-    return aux;
-}*/
-
 /** \brief Baja de empleado
  *
  * \param path char*
@@ -272,79 +211,43 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
  * \return int
  *
  */
-
-/*int controller_removeEmployee(LinkedList* pArrayListEmployee)
-{
-   int retorno = 1;
-   Employee* pEmpleado;
-   int id;
-   int i;
-
-   if (pArrayListEmployee != NULL)
-   {
-       // busco el empleado a eliminar:
-       if(!getIntInRange(&id, "\nIngrese el ID del empleado a eliminar: ", "\nIngreso invalido\n", 0, ll_len(pArrayListEmployee), 2))
-       {
-           for (i=0;i<ll_len(pArrayListEmployee);i++) // recorro la lista de empleados
-           {
-               pEmpleado = ll_pop(pArrayListEmployee, i); //VER POP me guardo el empleado actual
-
-               if(pEmpleado->id == id) // pregunto si el empleado actual es el que busco
-               {
-                   ll_remove(pArrayListEmployee, id);
-                   employee_delete(pEmpleado); // para hacer el free
-                   retorno = 0;
-                   printf("\nSE ELIMINO AL EMPLEADO\n");
-                   system("pause");
-                   system("cls");
-                   break;
-               }
-           }
-       }
-   }
-
-   return retorno;
-}*/
 int controller_removeEmployee(LinkedList* pArrayListEmployee)
 {
     Employee* eEmpleado;
 
-    int aux=0;
+    int todoOk=0;
     int aux_id;
     int i;
     char confirma='n';
 
-    if(pArrayListEmployee==NULL)
+
+    if(pArrayListEmployee!=NULL && todoOk==0)
     {
-        printf("\nError");
-    }
-    else
-    {
-        getInt(&aux_id,"\n Ingrese numero de Id: ", "Error");
+        getInt(&aux_id,"\n INGRESE ID A ELIMINAR: ", "Error");
         for(i=0; i<ll_len(pArrayListEmployee); i++)
         {
 
             eEmpleado=ll_get(pArrayListEmployee,i);
+        }
+        if(aux_id==eEmpleado->id)
+        {
+            printf("\nEL ID CORRESPONDE A: \n\n%d %s %d %d\n",eEmpleado->id,eEmpleado->nombre,eEmpleado->horasTrabajadas,eEmpleado->sueldo);
 
-            if(aux_id==eEmpleado->id)
+            confirma=getChar("\nCONFIRMA ELIMINAR AL EMPLEADO?");
+            if (confirma=='s' || confirma=='S')
             {
-                printf("\nSe ha encontrado la siguiente informacion:\n%d %s %d %d\n",eEmpleado->id,eEmpleado->nombre,eEmpleado->horasTrabajadas,eEmpleado->sueldo);
-                ///system("pause");
-                confirma=getChar("\nCONFIRMA ELIMINAR?");
-                if (confirma=='s')
-                {
-                    ll_remove(pArrayListEmployee,i);
-                    aux=1;
-                    break;
+                ll_remove(pArrayListEmployee,i);
+                printf("\n\nELIMINACION REALIZADA");
+                todoOk=1;
+                system("pause");
 
-                }
             }
         }
-
     }
-
-    return aux;
+    return todoOk;
 }
+
+
 
 
 /** \brief Listar empleados
@@ -411,7 +314,7 @@ int controller_saveAsText(char* path, LinkedList* pArrayListEmployee)
 
     FILE* pFile=fopen(path, "w");
     Employee* eEmpleado;
-    ///int i;
+
     int len=ll_len(pArrayListEmployee);
     int aux=0;
     if(pFile==NULL)
@@ -443,8 +346,8 @@ int controller_saveAsBinary(char* path, LinkedList* pArrayListEmployee)
 {
     FILE* pFile=fopen(path, "wb");
     Employee* eEmpleado;
-    //eEmpleado=employee_new();
-    ///int i;
+
+
     int len=ll_len(pArrayListEmployee);
     int aux=0;
 
