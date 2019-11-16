@@ -28,12 +28,23 @@ int main()
     int flagAltaBin=0;
     LinkedList* listaEmpleados = ll_newLinkedList();
 
-    printf("\n\t\t Trabajo Practico Nro.3\n");
+    printf("\n\t\t***TP Nº3 EMPLEADOS Y ARCHIVOS***\n");
 
     do
     {
-        getIntInRange(&option,"\n\n 1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n 2. Cargar los datos de los empleados desde el archivo data.csv (modo binario)\n 3. Alta de empleado\n 4. Modificar datos de empleado\n 5. Baja de empleado\n 6. Listar empleados\n 7. Ordenar empleados\n 8. Guardar los datos de los empleados en el archivo data.csv (modo texto).\n 9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\n 10. Salir\nSu opcion: ","\nOPCION INVALIDA!",1,10,2);
 
+        getIntInRange(&option,"\n\n1. Cargar los datos de los empleados desde el archivo data.csv (modo texto)\n"
+                      "2. Cargar los datos de los empleados desde el archivo data.csv (modo binario)\n"
+                      "3. Alta de empleado\n"
+                      "4. Modificar datos de empleado\n"
+                      "5. Baja de empleado\n"
+                      "6. Listar empleados\n"
+                      "7. Ordenar empleados\n"
+                      "8. Guardar los datos de los empleados en el archivo data.csv (modo texto).\n"
+                      "9. Guardar los datos de los empleados en el archivo data.csv (modo binario).\n"
+                      "10. Salir\nSu opcion: ","\nOPCION INVALIDA!",1,10,1);
+
+        system("cls");
         switch(option)
         {
         case 1:
@@ -80,7 +91,7 @@ int main()
                 else
                 {
                     system("cls");
-                    printf("Algo fallo. Alta no realizada");
+                    printf("\n***NO SE REALIZO EL ALTA***");
                 }
             }
             break;
@@ -94,11 +105,11 @@ int main()
             {
                 if(controller_editEmployee(listaEmpleados))
                 {
-                    printf("\n Modificacion exitosa");
+                    printf("\n*SE HAN MODIFICADO EL EMPLEADO*");
                 }
                 else
                 {
-                    printf("Algo fallo. Modificacion no realizada");
+                    printf("\n*ERROR AL MODIFICAR!*");
                 }
             }
             break;
@@ -110,9 +121,19 @@ int main()
             }
             else
             {
-                controller_removeEmployee(listaEmpleados);
-                system("pause");
-            }
+                if (controller_removeEmployee(listaEmpleados))
+                {
+                    system("cls");
+                    printf("\n***ELIMINACION EXITOSA***\n");
+                    system("pause");
+                }
+                else
+                {
+                    system("cls");
+                    printf("\n***NO SE ELIMINO AL EMPLEADO***\n");
+                    system("pause");
+                }
+
             break;
         case 6:
             if(flagAltaTxt==0 && flagAltaBin==0)
@@ -122,18 +143,26 @@ int main()
             }
             else
             {
+                system("cls");
                 controller_ListEmployee(listaEmpleados);
+                printf("\n\n");
+                system("pause");
+                system("cls");
             }
             break;
         case 7:
             if(flagAltaTxt==0 && flagAltaBin==0)
             {
                 system("cls");
-                printf("No se ha cargado el archivo aun");
+                printf("\n\n***AUN NO SE CARGO EL ARCHIVO***");
             }
-            else {
+            else
+            {
+                printf("\n\n***ESTAMOS ORDENANDO EL ARCHIVO, PACIENCIA***");
+
                 controller_sortEmployee(listaEmpleados);
-                printf("EL ARCHIVO HA SIDO ORDENADO POR ORDEN ALFABETICO ");
+                printf("\n\nEL ARCHIVO HA SIDO ORDENADO POR ORDEN ALFABETICO\n\n");
+                system("pause");
                 system("cls");
             }
             break;
@@ -141,14 +170,14 @@ int main()
             if(flagAltaTxt==0 && flagAltaBin==0)
             {
                 system("cls");
-                printf("No se ha cargado el archivo aun");
+                printf("\n\n***AUN NO SE CARGO EL ARCHIVO***");
             }
             else
             {
                 if(controller_saveAsText("data.csv",listaEmpleados))
                 {
                     system("cls");
-                    printf("El archivo se ha guardado");
+                    printf("\n\n***SE GUARDO CORRECTAMENTE EL ARCHIVO TEXTO***");
                 }
             }
             break;
@@ -156,20 +185,22 @@ int main()
             if(flagAltaTxt==0 && flagAltaBin==0)
             {
                 system("cls");
-                printf("No se ha cargado el archivo aun");
+                printf("\n\n***AUN NO SE CARGO EL ARCHIVO***");
             }
             else
             {
                 if(controller_saveAsBinary("data.csv",listaEmpleados))
                 {
                     system("cls");
-                    printf("El archivo se ha guardado");
+                    printf("\n\n***SE GUARDO CORRECTAMENTE EL ARCHIVO TEXTO***");
                 }
             }
             break;
         }
     }
+    }
     while(option != 10);
     ll_deleteLinkedList(listaEmpleados);
     return 0;
+
 }

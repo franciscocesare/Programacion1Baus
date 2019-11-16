@@ -359,3 +359,54 @@
 	<ctype.h>
 	"utn.h"
 
+1573270267 source:c:\users\alumno\desktop\tp3_cesare\win_64\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+	"parser.h"
+
+1573270620 c:\users\alumno\desktop\tp3_cesare\win_64\linkedlist.h
+
+1573260830 c:\users\alumno\desktop\tp3_cesare\win_64\employee.h
+
+1573260830 c:\users\alumno\desktop\tp3_cesare\win_64\utn.h
+
+1573260830 c:\users\alumno\desktop\tp3_cesare\win_64\parser.h
+
+1573260830 source:c:\users\alumno\desktop\tp3_cesare\win_64\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1573271756 source:c:\users\alumno\desktop\tp3_cesare\win_64\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1573260830 c:\users\alumno\desktop\tp3_cesare\win_64\controller.h
+
+1573260830 source:c:\users\alumno\desktop\tp3_cesare\win_64\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1573271900 source:c:\users\alumno\desktop\tp3_cesare\win_64\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+
