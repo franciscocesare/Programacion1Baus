@@ -21,7 +21,9 @@ int parser_FromText(FILE* pFile , LinkedList* lista){
     char campo_5[10];
 
     int charge;
+
     charge=fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", campo_1, campo_2, campo_3, campo_4, campo_5);
+
     do{
         charge=fscanf(pFile, "%[^,],%[^,],%[^,],%[^,],%[^\n]\n", campo_1, campo_2, campo_3, campo_4, campo_5);
         if(charge!=5){

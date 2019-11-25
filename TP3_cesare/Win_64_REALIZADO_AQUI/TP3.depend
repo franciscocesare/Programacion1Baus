@@ -410,3 +410,54 @@
 	<ctype.h>
 	"utn.h"
 
+1573934713 source:c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+	"parser.h"
+
+1573934713 c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\linkedlist.h
+
+1573934713 c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\employee.h
+
+1573934713 c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\utn.h
+
+1573934713 c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\parser.h
+
+1573934713 source:c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1573934713 source:c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1573934713 c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\controller.h
+
+1573934713 source:c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1573934713 source:c:\users\usuario\desktop\programacion1baus\tp3_cesare\win_64_realizado_aqui\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+

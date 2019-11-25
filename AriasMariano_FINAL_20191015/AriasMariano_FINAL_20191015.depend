@@ -79,3 +79,43 @@
 	"LinkedList.h"
 	"entidades.h"
 
+1574533526 source:c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1571611671 c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\utn.h
+
+1573943820 c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\linkedlist.h
+
+1571611671 c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\entidades.h
+
+1571611671 source:c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1573942773 source:c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\entidades.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+
+1574007845 source:c:\users\usuario\desktop\programacion1baus\ariasmariano_final_20191015\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"LinkedList.h"
+	"entidades.h"
+

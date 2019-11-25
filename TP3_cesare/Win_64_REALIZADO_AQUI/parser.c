@@ -22,18 +22,19 @@ int parser_EmployeeFromText(FILE* pFile , LinkedList* pArrayListEmployee){
 
     do{
         charge=fscanf(pFile, "%[^,],%[^,],%[^,],%[^\n]\n", aux_id, aux_nombre, aux_horasTrabajadas, aux_sueldo);
+        ///fscanf me devuelve la cant de campos que cargo
         if(charge!=4){
             printf("Error");
         }else{
             Employee* pEmpleado=employee_new();
-
+///aca deberia hacer seter para validar antes de cargar los datos a cada employee
             pEmpleado->id=atoi(aux_id);
             strcpy(pEmpleado->nombre,aux_nombre);
             pEmpleado->horasTrabajadas=atoi(aux_horasTrabajadas);
             pEmpleado->sueldo=atoi(aux_sueldo);
             ll_add(pArrayListEmployee, pEmpleado);
         }
-    }while(!feof(pFile));
+    }while(!feof(pFile));///cuando llega al final del archivo, sale, despues fclose cierra el archivo
     fclose(pFile);
 
     return 1;

@@ -7,7 +7,7 @@
 
 Employee* employee_new()
 {
-    return (Employee*) malloc(sizeof(Employee));
+    return (Employee*) malloc(sizeof(Employee));///)employee*) estoy casteando el espacio que me rewerva malloc
 }
 
 Employee* employee_newParametros(char* idStr,char* nombreStr,char* horasTrabajadasStr,char* sueldo)
